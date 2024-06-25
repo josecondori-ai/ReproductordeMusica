@@ -19,7 +19,7 @@ function loadSong(song) {
   title.innerText = getSongTitle(song);
   audio.src = `https://github.com/josecondori-ai/ReproductordeMusica/blob/main/audio/${song}.mp3?raw=true`;
 
-  cover.src = `https://github.com/josecondori-ai/ReproductordeMusica/blob/main/portadas/${song}.jpg?raw=true`;
+  cover.src = `https://raw.githubusercontent.com/josecondori-ai/ReproductordeMusica/main/portadas/${song}.jpg`;
 }
 
 function playSong() {
