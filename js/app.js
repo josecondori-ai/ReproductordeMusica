@@ -17,10 +17,9 @@ function getSongTitle(song) {
 
 function loadSong(song) {
   title.innerText = getSongTitle(song);
-  // audio.src = `https://github.com/bradtraversy/vanillawebprojects/blob/master/music-player/music/${song}.mp3?raw=true`;
   audio.src = `https://github.com/josecondori-ai/ReproductordeMusica/blob/main/audio/${song}.mp3?raw=true`;
 
-  cover.src = `https://github.com/josecondori-ai/ReproductordeMusica/blob/main/portadas/${song}.jpg`;
+  cover.src = `https://github.com/josecondori-ai/ReproductordeMusica/blob/main/portadas/${song}.jpg?raw=true`;
 }
 
 function playSong() {
