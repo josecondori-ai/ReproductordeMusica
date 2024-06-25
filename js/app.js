@@ -8,7 +8,7 @@ const progressContainer = document.getElementById("contenedor-progreso");
 const title = document.getElementById("titulo");
 const cover = document.getElementById("portada");
 
-const songs = ["hey", "summer", "ukulele"];
+const songs = ["amalgam", "forher", "movement"];
 let songIndex = 1;
 
 function getSongTitle(song) {
@@ -17,8 +17,10 @@ function getSongTitle(song) {
 
 function loadSong(song) {
   title.innerText = getSongTitle(song);
-  audio.src = `https://github.com/bradtraversy/vanillawebprojects/blob/master/music-player/music/${song}.mp3?raw=true`;
-  cover.src = `https://github.com/bradtraversy/vanillawebprojects/blob/master/music-player/images/${song}.jpg?raw=true`;
+  // audio.src = `https://github.com/bradtraversy/vanillawebprojects/blob/master/music-player/music/${song}.mp3?raw=true`;
+  audio.src = `https://github.com/josecondori-ai/ReproductordeMusica/blob/main/audio/${song}.mp3?raw=true`;
+
+  cover.src = `https://github.com/josecondori-ai/ReproductordeMusica/blob/main/portadas/${song}.jpg`;
 }
 
 function playSong() {
