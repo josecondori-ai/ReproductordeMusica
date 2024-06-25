@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e0f7fa;
+  background-image: linear-gradient(
+    120deg,
+    rgba(34,193,195,1) 0%,
+    rgba(253,187,45,1) 100%
+);
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.contenedor-musica {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+  padding: 20px 30px;
+  position: relative;
+  margin: 100px 0;
+  z-index: 10;
+}
+
+.contenedor-imagen {
+  position: relative;
+  width: 110px;
+}
+
+.contenedor-imagen img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 110px;
+  width: inherit;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: girarImagen 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.contenedor-imagen::after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: 100%;
+  left: 50%;
+  height: 20px;
+  width: 20px;
+  transform: translate(-50%, 50%);
+}
+
+.contenedor-musica.play .contenedor-imagen img {
+  animation-play-state: running;
+}
+
+@keyframes girarImagen {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navegacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.btn-accion {
+  background-color: #fff;
+  border: 0;
+  color: #90a4ae;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.btn-accion:focus {
+  outline: none;
+}
+
+.btn-accion:hover, .btn-accion.btn-accion-grande:hover {
+  color: #1A535C
+}
+
+.btn-accion.btn-accion-grande {
+  color: #607d8b;
+  font-size: 30px;
+}
+
+.informacion-musica {
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  width: calc(100% - 40px);
+  padding: 10px 10px 10px 150px;
+  top: 0;
+  left: 20px;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  z-index: 0;
+}
+
+.contenedor-musica.play .informacion-musica {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.informacion-musica h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.contenedor-progreso {
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progreso {
+  background-color: #29b6f6;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
